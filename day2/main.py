@@ -15,11 +15,8 @@ for line in file:
     # cast all strings in list as ints
     line = list(map(int, split_line))
 
-    # check if line is increasing
-    if (line == sorted(line)):
-        if (check_safe_levels(line) == True):
-            safe_tally += 1
-    elif (line == sorted(line, reverse = True)):
+    # check if line is increasing/decreasing
+    if (line == sorted(line) or line == sorted(line, reverse = True)):
         if (check_safe_levels(line) == True):
             safe_tally += 1
 
@@ -35,7 +32,7 @@ safe_tally2 = 0
 # function to check if a line is valid with problem dampener
 def problem_dampener_check(line):
     # usual check from part 1
-    if line == sorted(line) or line == sorted(line, reverse=True):
+    if (line == sorted(line) or line == sorted(line, reverse = True)):
         if check_safe_levels(line):
             return True
 
