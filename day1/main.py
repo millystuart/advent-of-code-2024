@@ -25,3 +25,20 @@ for i in range(0, len(left_list)):
 
 # sum distances
 print(sum(distances))
+
+# ------------------------------ Part 2 ------------------------------ #
+
+similarity_score = []
+
+# calculate number of occurences of left_list in right_list
+for lnum in left_list:
+    occurence = 0
+    for rnum in right_list:
+        if lnum == rnum:
+            occurence += 1
+    similarity_value = lnum * occurence
+    similarity_score.append(similarity_value)
+
+# sum occurences
+
+print(sum(similarity_score))
